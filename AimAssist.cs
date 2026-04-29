@@ -3,39 +3,39 @@ using UnityEngine.UI;
 
 public class AimAssist : MonoBehaviour
 {
-    [Header("参照")]
+    [Header("Bone and Camera")]
     public Transform rightArm;        // 上腕（肩関節）
     public Transform forearm;         // 肘関節
     public Transform head;            // 頭部
     public Transform gunMuzzle;       // 銃口
     public Camera cam;
 
-    [Header]//エイムアシスト設定
+    [Header("AimAssist Option")]//エイムアシスト設定
     public float assistRange = 750f; //エイムアシストをさせる距離（Unity基準で、単位1あたり1mを想定）
     public float assistFovAngle = 15f; //カメラの中心からエイムアシストの判定を与える範囲の角度
     public LayerMask enemyLayer; //ターゲット判定を与えるレイヤー
 
-    [Header]//追従速度設定
+    [Header("Rotate Speed")]//追従速度設定
     public float armRotateSpeed = 10f;
     public float headRotateSpeed = 6f;
 
-    [Header]//腕オフセット
+    [Header("Arm Offset")]//腕オフセット
     public Vector3 localRotationOffset = new Vector3(0f, 0f, 0f); //操作機体ごとに微調整可能
     public Vector3 elbowRotationOffset = Vector3.zero;
 
-    [Header]//頭オフセット
+    [Header("Head Offset")]//頭オフセット
     public Vector3 headRotationOffset = Vector3.zero;
 
-    [Header]//腕の回転制限
+    [Header("Arm Pitch")]//腕の回転制限
     public float minPitch = -60f;
     public float maxPitch = 60f;
 
-    [Header]//頭部の回転制限（ローカル角度で）
+    [Header("Head Pitch")]//頭部の回転制限（ローカル角度で）
     public Vector2 headPitchLimit = new Vector2(-45f, 45f);
     public Vector2 headYawLimit   = new Vector2(-70f, 70f);
     public Vector2 headRollLimit  = new Vector2(-20f, 20f);
 
-    [Header]//UI
+    [Header("UI Opution")]//UI設定
     public Image assistReticle; //ファイル形式はPNGを想定
     public float reticleVisibleAlpha = 1f;
 
